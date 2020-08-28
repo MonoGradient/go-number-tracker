@@ -119,6 +119,28 @@ func TestCheck_Success(t *testing.T) {
 	t.Cleanup(cleanUpRedis)
 }
 
+func TestDecrement_Success(t *testing.T) {
+	client := newRedisClient()
+	defer client.Close()
+	key := uuid.New().String()
+	value := rand.Int63()
+	client.Set(key, value, 15*time.Minute)
+	if data, err := Decrement(key); err != nil {
+		assert.Fail(t, "Failed to Decrement")
+	} else {
+		assert.Equal(t, data.Value, value-1, "Values should be equal")
+	}
+}
+
+func TestDecrement_Fail_InvalidKey(t *testing.T) {
+	key := uuid.New().String()
+	if data, err := Decrement(key); err != nil {
+		assert.Error(t, err, "Expected error to be thrown")
+	} else {
+		t.Logf("Content: %v", data)
+		assert.Fail(t, "Error should have been thrown.")
+	}
+}
 
 func cleanUpRedis() {
 	client := newRedisClient()

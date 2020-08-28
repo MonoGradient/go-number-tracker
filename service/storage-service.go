@@ -55,15 +55,18 @@ func IdempotentIncrement(opts ...string) (*model.StorageResponse, error) {
 func Decrement(key string) (*model.StorageResponse, error) {
 	client := newRedisClient()
 	defer client.Close()
-	if result, err := client.Decr(key).Result(); err != nil {
+	if _, err := client.Get(key).Result(); err != nil {
 		return nil, err
-	} else {
-		return &model.StorageResponse{
-			Key:             key,
-			Value:           result,
-			ActionTimestamp: time.Now().Format(time.RFC3339),
-		}, nil
 	}
+	result, err := client.Decr(key).Result()
+	if err != nil {
+		return nil, err
+	}
+	return &model.StorageResponse{
+		Key:             key,
+		Value:           result,
+		ActionTimestamp: time.Now().Format(time.RFC3339),
+	}, nil
 }
 
 func Delete(key string) bool {

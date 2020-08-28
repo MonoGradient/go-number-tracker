@@ -9,6 +9,9 @@ import (
 	"time"
 )
 
+var (
+	PORT = "8080"
+)
 func main() {
 	r := mux.NewRouter()
 	r.Use(AddJsonContentTypeHeaderMiddleware)
@@ -20,7 +23,7 @@ func main() {
 	r.HandleFunc("/storage/{key}", api.CheckStorageApi).Methods("GET")
 	server := &http.Server {
 		Handler: r,
-		Addr: "127.0.0.1:1234",
+		Addr: "127.0.0.1:"+PORT,
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout: 15 * time.Second,
 	}
