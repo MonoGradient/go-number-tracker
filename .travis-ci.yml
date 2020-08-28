@@ -1,0 +1,30 @@
+language: go
+go: 1.14.6
+services:
+  - redis-server
+  - docker
+
+jobs:
+  include:
+    - stage: service-test
+      name: "API Tests"
+      env:
+        - REDIS_HOST=127.0.0.1:6379
+        - REDIS_PASSWORD=""
+      script:
+        - go test -v service/*.go
+    - stage: api-test
+      name: "API Tests"
+      env:
+        - REDIS_HOST=127.0.0.1:6379
+        - REDIS_PASSWORD=""
+      script:
+        - go test -v api/*.go
+    - stage: build
+      name: "Docker Build"
+      script:
+        - docker build -t temporary:latest .
+    - stage: deploy
+      name: "Deploy to Heroku"
+      script:
+        - echo "TBI"

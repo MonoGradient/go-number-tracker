@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b121f34d-840b-43ca-8679-87e02202b7a9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="/usr/local/Cellar/go/1.14.6/libexec" />
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="arn:aws:eks:ap-southeast-1:026083545547:cluster/cds-gitlab-runners" />
+    <option name="namespace" value="default" />
+  </component>
+  <component name="ProjectId" id="1gj3UlnQ9eh1RCaTO7G2dIhiOfh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+  </component>
+  <component name="RunManager" selected="Go Test.TestIncrementStorageWithKeyApi_Success_Increment in Go-Tracker/api">
+    <configuration name="TestIdempotentIncrementStorageApi_Success in Go-Tracker/api (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Go-Tracker" />
+      <working_directory value="$PROJECT_DIR$/api" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="Go-Tracker/api" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestIdempotentIncrementStorageApi_Success\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestIdempotentIncrementStorageApi_Success in Go-Tracker/api (3)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Go-Tracker" />
+      <working_directory value="$PROJECT_DIR$/api" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="Go-Tracker/api" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestIdempotentIncrementStorageApi_Success\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestIncrementStorageWithKeyApi_Fail_InvalidKey in Go-Tracker/api" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Go-Tracker" />
+      <working_directory value="$PROJECT_DIR$/api" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="Go-Tracker/api" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestIncrementStorageWithKeyApi_Fail_InvalidKey\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestIncrementStorageWithKeyApi_Success in Go-Tracker/api" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Go-Tracker" />
+      <working_directory value="$PROJECT_DIR$/api" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="Go-Tracker/api" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestIncrementStorageWithKeyApi_Success\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestIncrementStorageWithKeyApi_Success_Increment in Go-Tracker/api" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Go-Tracker" />
+      <working_directory value="$PROJECT_DIR$/api" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="Go-Tracker/api" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestIncrementStorageWithKeyApi_Success_Increment\E$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestIncrementStorageWithKeyApi_Success_Increment in Go-Tracker/api" />
+        <item itemvalue="Go Test.TestIncrementStorageWithKeyApi_Fail_InvalidKey in Go-Tracker/api" />
+        <item itemvalue="Go Test.TestIdempotentIncrementStorageApi_Success in Go-Tracker/api (3)" />
+        <item itemvalue="Go Test.TestIncrementStorageWithKeyApi_Success in Go-Tracker/api" />
+        <item itemvalue="Go Test.TestIdempotentIncrementStorageApi_Success in Go-Tracker/api (2)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="111" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598615942577">
+      <screen x="0" y="23" width="1440" height="852" />
+    </state>
+    <state x="184" y="111" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.852@0.23.1440.852" timestamp="1598615942577" />
+    <state width="1398" height="270" key="GridCell.Tab.0.bottom" timestamp="1598629562006">
+      <screen x="0" y="23" width="1440" height="852" />
+    </state>
+    <state width="1398" height="270" key="GridCell.Tab.0.bottom/0.23.1440.852@0.23.1440.852" timestamp="1598629562006" />
+    <state width="1398" height="270" key="GridCell.Tab.0.center" timestamp="1598629562006">
+      <screen x="0" y="23" width="1440" height="852" />
+    </state>
+    <state width="1398" height="270" key="GridCell.Tab.0.center/0.23.1440.852@0.23.1440.852" timestamp="1598629562006" />
+    <state width="1398" height="270" key="GridCell.Tab.0.left" timestamp="1598629562005">
+      <screen x="0" y="23" width="1440" height="852" />
+    </state>
+    <state width="1398" height="270" key="GridCell.Tab.0.left/0.23.1440.852@0.23.1440.852" timestamp="1598629562005" />
+    <state width="1398" height="270" key="GridCell.Tab.0.right" timestamp="1598629562006">
+      <screen x="0" y="23" width="1440" height="852" />
+    </state>
+    <state width="1398" height="270" key="GridCell.Tab.0.right/0.23.1440.852@0.23.1440.852" timestamp="1598629562006" />
+    <state width="1398" height="270" key="GridCell.Tab.1.bottom" timestamp="1598629562531">
+      <screen x="0" y="23" width="1440" height="852" />
+    </state>
+    <state width="1398" height="270" key="GridCell.Tab.1.bottom/0.23.1440.852@0.23.1440.852" timestamp="1598629562531" />
+    <state width="1398" height="270" key="GridCell.Tab.1.center" timestamp="1598629562531">
+      <screen x="0" y="23" width="1440" height="852" />
+    </state>
+    <state width="1398" height="270" key="GridCell.Tab.1.center/0.23.1440.852@0.23.1440.852" timestamp="1598629562531" />
+    <state width="1398" height="270" key="GridCell.Tab.1.left" timestamp="1598629562531">
+      <screen x="0" y="23" width="1440" height="852" />
+    </state>
+    <state width="1398" height="270" key="GridCell.Tab.1.left/0.23.1440.852@0.23.1440.852" timestamp="1598629562531" />
+    <state width="1398" height="270" key="GridCell.Tab.1.right" timestamp="1598629562531">
+      <screen x="0" y="23" width="1440" height="852" />
+    </state>
+    <state width="1398" height="270" key="GridCell.Tab.1.right/0.23.1440.852@0.23.1440.852" timestamp="1598629562531" />
+    <state x="422" y="188" width="596" height="522" key="find.popup" timestamp="1598620955488">
+      <screen x="0" y="23" width="1440" height="852" />
+    </state>
+    <state x="422" y="188" width="596" height="522" key="find.popup/0.23.1440.852@0.23.1440.852" timestamp="1598620955488" />
+    <state x="385" y="199" width="670" height="676" key="search.everywhere.popup" timestamp="1598615110544">
+      <screen x="0" y="23" width="1440" height="852" />
+    </state>
+    <state x="385" y="199" width="670" height="676" key="search.everywhere.popup/0.23.1440.852@0.23.1440.852" timestamp="1598615110544" />
+  </component>
+</project>
