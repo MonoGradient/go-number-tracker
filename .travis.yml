@@ -1,13 +1,11 @@
 language: go
 go: 1.14.6
-services:
-  - redis-server
-  - docker
 
 jobs:
   include:
     - stage: service-test
       name: "API Tests"
+      services: redis
       env:
         - REDIS_HOST=127.0.0.1:6379
         - REDIS_PASSWORD=""
@@ -15,6 +13,7 @@ jobs:
         - go test -v service/*.go
     - stage: api-test
       name: "API Tests"
+      services: redis
       env:
         - REDIS_HOST=127.0.0.1:6379
         - REDIS_PASSWORD=""
@@ -22,6 +21,7 @@ jobs:
         - go test -v api/*.go
     - stage: test-coverage
       name: "Test Coverage"
+      services: redis
       env:
         - REDIS_HOST=127.0.0.1:6379
         - REDIS_PASSWORD=""
@@ -30,6 +30,7 @@ jobs:
         - go tool cover -html=coverage.out -o coverage.html
     - stage: build
       name: "Docker Build"
+      services: docker
       script:
         - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
         - docker build -t monogradient/go-tracker-api:latest .
