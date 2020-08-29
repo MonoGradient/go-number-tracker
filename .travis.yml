@@ -31,7 +31,11 @@ jobs:
     - stage: build
       name: "Docker Build"
       script:
-        - docker build -t temporary:latest .
+        - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+        - docker build -t monogradient/go-tracker-api:latest .
+        - docker tag monogradient/go-tracker-api:latest monogradient/go-tracker-api:$TRAVIS_BUILD_NUMBER
+        - docker push monogradient/go-tracker-api
+        - docker logout
     - stage: deploy
       name: "Deploy to Heroku"
       script:
