@@ -40,4 +40,4 @@ jobs:
     - stage: deploy
       name: "Deploy to Heroku"
       script:
-        - echo "TBI"
+        - heroku login

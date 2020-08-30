@@ -2,6 +2,7 @@ package api
 
 import (
 	"Go-Tracker/model"
+	"Go-Tracker/service"
 	"encoding/json"
 	"github.com/go-redis/redis"
 	"github.com/google/uuid"
@@ -84,6 +85,90 @@ func TestIncrementStorageWithKeyApi_Success_InvalidKey(t *testing.T) {
 
 	assert.Equal(t, getDataFromRedis(responseData.Key), responseData.Value, "Values should match")
 	t.Cleanup(cleanUpRedis)
+}
+
+func TestDecrementStorageApi_Success(t *testing.T) {
+
+	data, _ := service.IdempotentIncrement()
+	r, _ := http.NewRequest("PUT", "/api/v1/decrement", nil)
+	r = mux.SetURLVars(r, map[string]string{
+		"key": data.Key,
+	})
+	w := httptest.NewRecorder()
+
+	DecrementStorageApi(w, r)
+	var responseData model.StorageResponse
+	json.Unmarshal(w.Body.Bytes(), &responseData)
+
+	assert.Equal(t, w.Code, http.StatusOK)
+	assert.Equal(t, data.Value-1, responseData.Value, "Expected values to be the equal")
+
+}
+
+func TestDecrementStorageApi_Fail_InvalidKey(t *testing.T) {
+	key := "invalidkey"
+	r, _ := http.NewRequest("PUT", "/api/v1/decrement", nil)
+	r = mux.SetURLVars(r, map[string]string{
+		"key": key,
+	})
+	w := httptest.NewRecorder()
+	DecrementStorageApi(w, r)
+
+	assert.Equal(t, w.Code, http.StatusInternalServerError)
+}
+
+func TestCheckStorageApi_Success(t *testing.T) {
+	data, _ := service.IdempotentIncrement()
+	r, _ := http.NewRequest("GET", "/api/v1/storage", nil)
+	r = mux.SetURLVars(r, map[string]string{
+		"key": data.Key,
+	})
+	w := httptest.NewRecorder()
+	CheckStorageApi(w, r)
+	var responseData model.StorageResponse
+	json.Unmarshal(w.Body.Bytes(), &responseData)
+
+	assert.Equal(t, w.Code, http.StatusOK)
+	assert.Equal(t, responseData.Value, data.Value)
+	assert.Equal(t, responseData.Key, data.Key)
+
+}
+
+func TestCheckStorageApi_Fail_InvalidKey(t *testing.T) {
+	key := "invalidkey"
+	r, _ := http.NewRequest("GET", "/api/v1/storage", nil)
+	r = mux.SetURLVars(r, map[string]string{
+		"key": key,
+	})
+	w := httptest.NewRecorder()
+	CheckStorageApi(w, r)
+	var responseData model.StorageResponse
+	json.Unmarshal(w.Body.Bytes(), &responseData)
+
+	assert.Equal(t, w.Code, http.StatusInternalServerError)
+}
+
+func TestDeleteStorageApi_Success(t *testing.T) {
+	data, _ := service.IdempotentIncrement()
+	r, _ := http.NewRequest("DELETE", "/api/v1/storage", nil)
+	r = mux.SetURLVars(r, map[string]string{
+		"key": data.Key,
+	})
+	w := httptest.NewRecorder()
+	DeleteStorageApi(w, r)
+
+	assert.Equal(t, w.Code, http.StatusOK)
+}
+
+func TestDeleteStorageApi_Fail_InvalidKey(t *testing.T) {
+	key := "invalidkey"
+	r, _ := http.NewRequest("DELETE", "/api/v1/storage", nil)
+	r = mux.SetURLVars(r, map[string]string{
+		"key": key,
+	})
+	w := httptest.NewRecorder()
+	DeleteStorageApi(w, r)
+	assert.Equal(t, http.StatusNotFound, w.Code)
 }
 
 func TestIncrementStorageWithKeyApi_Success_Increment(t *testing.T) {

@@ -72,9 +72,11 @@ func Decrement(key string) (*model.StorageResponse, error) {
 func Delete(key string) bool {
 	client := newRedisClient()
 	defer client.Close()
-	if _, err := client.Del(key).Result(); err != nil {
+	if _, err := client.Get(key).Result(); err != nil {
+		log.Errorf("Failed to find key in DB: %v", err.Error())
 		return false
 	} else {
+		client.Del(key)
 		return true
 	}
 }
